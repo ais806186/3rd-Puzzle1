@@ -15,9 +15,9 @@ var nextMinute = true;
 
 function preload() {
  
-  corridor = loadImage('https://dl.dropboxusercontent.com/s/9bicgw95uurt7u7/corridor-003.jpg');
+  corridor = loadImage('https://dl.dropboxusercontent.com/s/7kpwqvgdb0pv3oi/corridor%201.jpg');
   go = loadImage('https://dl.dropboxusercontent.com/s/85gq73i2oh1908e/arrow%20go.png');
-wall = loadImage('https://dl.dropboxusercontent.com/s/cx31mcmbg4icgz9/concrete%20wall.jpeg')
+corridor2 = loadImage('https://dl.dropboxusercontent.com/s/4kvu4fvrbfe114u/Screen%20Shot%202017-05-09%20at%2012.56.56%20PM.png')
 
 }
 
@@ -26,15 +26,21 @@ function setup()
 {
   createCanvas(800,600);
 
-
-  // canvas 1 variables
+canvas = 1;  // canvas 1 variables
   
-    canvas = 1;
 }
 
 function draw()
 {
+  if (canvas == 1)
+  {
   canvas1();
+}
+else if (canvas == 2)
+{
+
+  canvas2();
+}
 
    if (second() == 0)
   {
@@ -55,8 +61,8 @@ function draw()
   newSecond = minuteMultiplier*60 + second() - initialTime;
   reversedTime = 200 - newSecond;
 
-textSize(30);
-  text("reversed time: "+reversedTime,150,200);
+textSize(20);
+  text("reversed time: "+reversedTime,90,200);
 
 
 }
@@ -66,41 +72,57 @@ function canvas1()
 {
 
   background(corridor,100,100);
-  image(go,305,432,200,200);
 fill(255,255,255);
-textSize(20);
+textSize(15);
   text("Mouse X "+mouseX,10,330);
   text("Mouse Y "+mouseY,10,290)
    
     
-
-  if(mouseX > 373 && mouseX< 440 && mouseY> 447 && mouseY< 600)
-  {
-  fill(255,255,255);
+ fill(255,255,255);
     stroke(255,255,255);
-   rect(380,490,47,110);
-    triangle(350,500,405,445,460,500)
-if(mouseIsPressed == true)
-{
-canvas2();
-}
-    
+   rect(356,490,47,110);
+    triangle(330,500,380,445,430,500)
 
+  if(mouseX > 345 && mouseX< 412 && mouseY> 447 && mouseY< 600 && mouseIsPressed == true)
   
+ 
+{
+canvas = 2;
+
+
 }
-
-
-
-
 }
   
 function canvas2()
 {
-  background(wall,800,600);
+  background(corridor2,600,600);
   fill(0,0,0);
   text("Mouse X "+mouseX,10,330);
   text("Mouse Y "+mouseY,10,290)
   itemGrid(); 
+
+  fill(255,255,255);
+    stroke(255,255,255);
+    //right arrow
+   rect(430,310,60,25);
+    triangle(490,300,515,325,490,350)
+
+      if(mouseX>430 && mouseX<513 && mouseY > 311 && mouseY<338 && mouseIsPressed == true)
+    {
+
+      canvas = 1;
+    }
+//left arrow
+    rect(310,310,60,25);
+    triangle(310,300,280,325,310,350)
+
+    if(mouseX > 280 && mouseX < 370 &&  mouseY>310 && mouseY <338 && mouseIsPressed == true)
+{
+  canvas = 1;
+
+}
+  
+
 
 }
 
