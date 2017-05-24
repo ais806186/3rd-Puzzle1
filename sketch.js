@@ -17,7 +17,7 @@ function preload() {
 corridor = loadImage('https://dl.dropboxusercontent.com/s/i3tlqxrhqo0vdpl/Corridor.png');
 corridor2 = loadImage('https://dl.dropboxusercontent.com/s/6b18nc0dyqa15m7/Screen%20Shot%202017-05-22%20at%2012.12.50%20PM.png')
 corridor3 = loadImage('https://dl.dropboxusercontent.com/s/5o3hhb22zkz0r85/Screen%20Shot%202017-05-22%20at%2012.13.07%20PM.png')
-street = loadImage('https://dl.dropboxusercontent.com/s/f876jkepty464wf/street%20view.jpg')
+street = loadImage('https://dl.dropboxusercontent.com/s/0gusjep2ekh1j98/Street%20View.png')
 
 
 alarm= loadImage('https://dl.dropboxusercontent.com/s/denaylpsul64xm4/alarm.png')
@@ -100,14 +100,43 @@ fill(255,255,255);
 textSize(15);
   text("Mouse X "+mouseX,10,330);
   text("Mouse Y "+mouseY,10,290)
+fill(0,0,0);
+rect(100,150,600,80);
 
-    
- fill(255,255,255);
-    stroke(255,255,255);
-   rect(356,490,47,110);
-    triangle(330,500,380,445,430,500)
+fill(255,255,255);
+textSize(20);
+text('What belongs to you but others use it more than you do?',150,200);
 
-  if(mouseX > 345 && mouseX< 412 && mouseY> 447 && mouseY< 600 && mouseIsPressed == true)
+fill(0,0,0);
+//top left
+rect(150,300,150,75);
+
+//top right
+rect(450,300,150,75);
+
+//bottom left
+rect(150,400,150,75);
+
+//bottom right
+rect(450,400,150,75);
+
+fill(255,255,255);
+textSize(18);
+text('laptop',170,350);
+
+text('phone',165,450);
+
+text('hairband',480,450);
+
+text('your name',480,350);
+
+fill(0,0,0,0)
+stroke(80,78,41);
+rect(55,69,100,25);
+
+   
+
+  if(mouseX > 452 && mouseX< 600 && mouseY> 301 && mouseY<375 && mouseIsPressed == true)
  
 {
 canvas = 2;
@@ -160,15 +189,12 @@ canvas = 4
 function canvas4()
 {
  
-  background(street,800,600);
-    text("MouseX"+mouseX,10,330);
-    text("MouseY"+mouseY,10,290);
-  
+background(street,800,600);
 fill(255,255,255);
 stroke(0,0,0)
 textSize(50);
-text('Congratulations,',200,200);
-text('YOU WON',210,250);
+text('Congratulations,',200,300);
+text('YOU WON!!!',210,370);
 
 }
 
